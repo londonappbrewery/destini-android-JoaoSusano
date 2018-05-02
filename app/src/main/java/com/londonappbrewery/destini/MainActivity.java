@@ -33,13 +33,24 @@ public class MainActivity extends AppCompatActivity {
         mButtonTop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mStoryTextView.setText(R.string.T3_Story);
-                mButtonTop.setText(R.string.T3_Ans1);
-                mButtonBottom.setText(R.string.T3_Ans2);
-                if(mStoryIndex < 2){
-                    mStoryIndex++;
+
+
+                if(mStoryIndex ==1) {
+                    mStoryTextView.setText(R.string.T3_Story);
+                    mButtonTop.setText(R.string.T3_Ans1);
+                    mButtonBottom.setText(R.string.T3_Ans2);
+                    mStoryIndex = 3;
                 }
-                else{
+
+                else if(mStoryIndex ==2 ){
+                    mStoryTextView.setText(R.string.T2_Story);
+                    mButtonTop.setText(R.string.T2_Ans1);
+                    mButtonBottom.setText(R.string.T2_Ans2);
+                    mStoryIndex = 3;
+                }
+
+                else if (mStoryIndex ==3){
+                    mStoryTextView.setText(R.string.T6_End);
                     mButtonTop.setVisibility(View.GONE);
                     mButtonBottom.setVisibility(View.GONE);
                 }
@@ -52,15 +63,26 @@ public class MainActivity extends AppCompatActivity {
         mButtonBottom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mStoryTextView.setText(R.string.T2_Story);
-                mButtonTop.setText(R.string.T2_Ans1);
-                mButtonBottom.setText(R.string.T2_Ans2);
-                if(mStoryIndex < 2){
-                    mStoryIndex++;
+
+                if(mStoryIndex ==1){
+                    mStoryTextView.setText(R.string.T2_Story);
+                    mButtonTop.setText(R.string.T2_Ans1);
+                    mButtonBottom.setText(R.string.T2_Ans2);
+                    mStoryIndex = 2;
                 }
-                else{
+
+                else if (mStoryIndex ==2){
+                    mStoryTextView.setText(R.string.T4_End);
                     mButtonTop.setVisibility(View.GONE);
                     mButtonBottom.setVisibility(View.GONE);
+
+                }
+
+                else if(mStoryIndex == 3){
+                    mStoryTextView.setText(R.string.T5_End);
+                    mButtonTop.setVisibility(View.GONE);
+                    mButtonBottom.setVisibility(View.GONE);
+
                 }
             }
         });
